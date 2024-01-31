@@ -1,0 +1,42 @@
+1.Realloc used to reallocate dynamically assigned memory spaces 
+
+syntax
+void *realloc(void *ptr, size_t size)
+
+ptr − It is the pointer of the memory block which was previously allocated to the calloc(), 
+malloc(), or realloc() function that is to be reallocated. 
+If this pointer is NULL, then a new block is allocated and the pointer to 
+it is returned by the realloc() function.
+
+size − It is the new size of the memory block which is to be reallocated. 
+It is passed in bytes. If the size is 0, then the memory block pointed by ptr 
+is deallocated and a NULL pointer is returned by the realloc() function even 
+if ptr points to an existing block of memory.
+
+Example:  
+int *arr = (int *)malloc(5 * sizeof(int));
+// Resize the array to hold 10 integers
+arr = (int *)realloc(arr, 10 * sizeof(int));
+
+2.char *c is basically the same as declaring an array of chars 
+
+Example:
+char *c = "Hello, World!";
+// Accessing and printing characters using array notation
+for (int i = 0; c[i] != '\0'; ++i)
+{
+    printf("%c", c[i]);
+}
+
+3.Memmove is a standard library function in C that is used to copy a block of memory from one location to another.
+The special characteristic of memmove is that it can handle overlapping memory regions correctly.
+
+syntax
+void *memmove(void *dest, const void *src, size_t n);
+dest: A pointer to the destination memory location where the data will be copied.
+src: A pointer to the source memory location from where the data will be copied.
+n: The number of bytes to copy.
+
+
+
+
